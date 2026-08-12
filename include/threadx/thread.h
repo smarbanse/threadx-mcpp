@@ -188,9 +188,21 @@ namespace threadx
         /// @param  name:      short label for identifying the thread
         static_thread(function func, void *param,
                 priority prio = priority(), const char *name = DEFAULT_NAME)
-            : thread(stack_, sizeof(stack_) / sizeof(stack_[0]),
-                    func, param, prio, name)
+            : thread(
+                stack_,
+                sizeof(stack_) / sizeof(stack_[0]),
+                func,
+                static_cast<native::ULONG>(
+                    reinterpret_cast<std::uintptr_t>(param)
+                ),
+                prio,
+                name
+            )
         {
+            static_assert(
+                sizeof(std::uintptr_t) <= sizeof(native::ULONG),
+                "ThreadX ULONG cannot hold pointer"
+            );
         }
 
         template<typename T>
