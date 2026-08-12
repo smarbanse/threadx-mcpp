@@ -28,17 +28,10 @@
 
 #include <chrono>
 #include "threadx/stdlib.h"
+#include "threadx/native.h"
 
 namespace threadx
 {
-    namespace native
-    {
-        #include "tx_api.h"
-
-        // these macros use native type casts, so need some redirection
-        constexpr ULONG infinite_delay = TX_WAIT_FOREVER;
-        constexpr ULONG tick_rate_Hz = TX_TIMER_TICKS_PER_SECOND;
-    }
 
     /// @brief  A @ref TrivialClock class that wraps the RTOS tick timer.
     class tick_timer

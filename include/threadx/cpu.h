@@ -27,14 +27,10 @@
 #define __THREADX_CPU_H_
 
 #include "threadx/stdlib.h"
+#include "threadx/native.h"
 
 namespace threadx
 {
-    namespace native
-    {
-        #include "tx_api.h"
-    }
-
     class cpu
     {
     public:
