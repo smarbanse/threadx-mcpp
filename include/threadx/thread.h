@@ -88,6 +88,10 @@ namespace threadx
         /// @return Pointer to the currently executing thread
         static thread* get_current();
 
+        /// @brief  Returns the number of times the thread has been run.
+        /// @return The thread's run count
+        native::ULONG get_run_count() const;
+
         /// @brief  Thin type wrapper for thread priority.
         class priority
         {

@@ -188,3 +188,8 @@ void this_thread::sleep_for(tick_timer::duration rel_time)
     auto result = tx_thread_sleep(to_ticks(rel_time));
     assert(result == TX_SUCCESS);
 }
+
+threadx::native::ULONG thread::get_run_count() const
+{
+    return tx_thread_run_count;
+}
