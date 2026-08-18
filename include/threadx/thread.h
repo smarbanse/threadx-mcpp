@@ -68,7 +68,7 @@ namespace threadx
 
         /// @brief  Reads the thread's friendly name (the string's size is limited to @ref NAME_MAX_SIZE).
         /// @return Pointer to the thread's name
-        const char *get_name();
+        const char *get_name() const;
 
         /// @brief  Possible operating states of a thread.
         enum class state

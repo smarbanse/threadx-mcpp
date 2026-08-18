@@ -125,7 +125,7 @@ thread::id thread::get_id() const
     return id(this);
 }
 
-const char *thread::get_name()
+const char *thread::get_name() const
 {
     return const_cast<const char*>(tx_thread_name);
 }
