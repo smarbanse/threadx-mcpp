@@ -250,7 +250,7 @@ namespace threadx
         ///         may use the default operators.
         void operator delete(void *p)
         {
-            ::delete p;
+            ::operator delete(p);
         }
 
     private:
